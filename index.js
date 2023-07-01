@@ -4,6 +4,10 @@ const accountSid = process.env.Account_SID;
 const authToken = process.env.Auth_Token;
 const client = require('twilio')(accountSid, authToken);
 
+app.get('/', (req, res) => {
+	res.send('UP');
+});
+
 app.get('/api/wakeUpCall', (req, res) => {
 	client.calls
 		.create({
